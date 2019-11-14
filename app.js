@@ -1,5 +1,22 @@
-<<<<<<< HEAD
-test nick
-=======
-test alan
->>>>>>> 3e0428f0f2c9037a6c8c83bf350008e59c56dc79
+const express = require('express');
+const app = express();
+const port = 3000;
+const path = require('path');
+
+app.use(express.static('public'));
+app.use(express.static('data'));
+
+app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, 'views'));
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
+app.get('/about', function(req, res) {
+  res.render('about');
+});
+app.get('/contact', function(req, res) {
+  res.render('contact');
+});
+
+app.listen(port);
