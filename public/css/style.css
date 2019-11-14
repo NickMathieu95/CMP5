@@ -1,0 +1,64 @@
+@font-face{
+  font-family: staalvis;
+  src: url("/fonts/steelfish.otf");
+}
+@font-face{
+  font-family: bulldog;
+  src: url("/fonts/bulldog.ttf");
+}
+*{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body{
+  background-color: #FDFDFD;
+  overflow: hidden;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
+#mapid, #campusMap{
+  height: 100vh;
+  width: 100vw;
+}
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+h1{
+  font-family: 'staalvis', sans-serif;
+  font-size: 3em;
+  place-self: center stretch;
+}
+.aplogo{
+  width: 70%;
+  padding: 1em;
+  margin: 0 auto;
+  place-self: center;
+}
+.leaflet-popup-content-wrapper .leaflet-popup-content{
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #FDFDFD;
+}
+p{
+  font-family: 'bulldog';
+  letter-spacing: 0.05em;
+  font-size: 1.5em;
+}
+.popup-marker{
+  width: 2em;
+}
+
+/*mediaqueries*/
+@media only screen and (min-width: 768px) {
+  header{
+    grid-template-columns: 1fr 1fr 3fr;
+  }
+  .aplogo{
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {}
