@@ -37,6 +37,11 @@ var request = require('request');
           console.log("");*/
           console.log(data.features[i].attributes);
       }
-
     }
   );
+
+  app.get('/', function(req, res){
+    res.render('cultuur', {
+      culturespots: data
+    });
+  });
