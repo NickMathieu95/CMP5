@@ -20,3 +20,23 @@ app.get('/contact', function(req, res) {
 });
 
 app.listen(port);
+
+console.log("Webserver draait");
+
+
+// Inladen online json file
+var request = require('request');
+  var data;
+  request('https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek4/MapServer/293/query?where=1%3D1&outFields=*&outSR=4326&f=json',
+    function(error, response, body){
+      data = JSON.parse(body);
+
+      for(var i=0; i < data.features.length; i++) {
+          /*console.log("naam: " + data.features[i].attributes.naam);
+          console.log("coord: " + data.features[i].geometry.x + ", " + data.features[i].geometry.y);
+          console.log("");*/
+          console.log(data.features[i].attributes);
+      }
+
+    }
+  );

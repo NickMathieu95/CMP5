@@ -158,4 +158,4 @@ $.getJSON("/ap.json", function(json) {
       	//window.open(this.options.win_url); }
     }
   }
-})
+});
