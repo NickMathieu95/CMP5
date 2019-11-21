@@ -23,9 +23,6 @@ const bibliotheek = L.icon({
   popupAnchor: [25, 0]
 });
 
-//inladen online json? + een lokale json file
-//geolocation niet beschikbaar, enkel LAT LONG, hoe te combineren? const/var aanmaken?
-//loopen door json data
 /*$.getJSON("/markers.json", function(json) {
   const culturespots = json.culturespots;
   for (var i=0; i<culturespots.length; i++) {
