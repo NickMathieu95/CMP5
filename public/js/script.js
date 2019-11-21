@@ -23,12 +23,11 @@ const bibliotheek = L.icon({
   popupAnchor: [25, 0]
 });
 
-
-$.getJSON("/ap.json", function(json) {
+$.getJSON("/markers.json", function(json) {
   const culturespots = json.culturespots;
   for (var i=0; i<culturespots.length; i++) {
 
-    if (culturespots[i].department === "Museum") {
+    if (culturespots[i].categorie === "Museum") {
       new L.marker(culturespots[i].geolocation, {
           icon: museum
         }).bindPopup(`
@@ -43,7 +42,7 @@ $.getJSON("/ap.json", function(json) {
         .addTo(cultureMap);
     }
 
-    if (culturespots[i].department === "Archief | Erfgoedbibliotheek") {
+    if (culturespots[i].categorie === "Archief | Erfgoedbibliotheek") {
       new L.marker(culturespots[i].geolocation, {
           icon: kerk
 				}).bindPopup(`
@@ -58,7 +57,7 @@ $.getJSON("/ap.json", function(json) {
 				.addTo(cultureMap);
 		}
 
-		if (culturespots[i].department === "Archief | Erfgoedbibliotheek") {
+		if (culturespots[i].categorie === "Archief | Erfgoedbibliotheek") {
 			new L.marker(culturespots[i].geolocation, {
 					icon: bibliotheek
 				}).bindPopup(`
