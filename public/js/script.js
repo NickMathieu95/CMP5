@@ -1,161 +1,78 @@
-const campusMap = L.map('mapid').setView([51.215860, 4.410800], 14);
+const cultureMap = L.map('mapid').setView([51.215860, 4.410800], 14);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
   maxZoom: 18,
-}).addTo(campusMap);
+}).addTo(cultureMap);
 
-const management = L.icon({
-  iconUrl: '/img/marker-manag.png',
+const museum = L.icon({
+  iconUrl: '/img/marker-museum.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-const onderwijs = L.icon({
-  iconUrl: '/img/marker-onderwijs.png',
+const kerk = L.icon({
+  iconUrl: '/img/marker-kerk.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-const wetenschap = L.icon({
-  iconUrl: '/img/marker-wetenschap.png',
+const bibliotheek = L.icon({
+  iconUrl: '/img/marker-bibliotheek.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-const conservatorium = L.icon({
-  iconUrl: '/img/marker-conserv.png',
-  iconSize: [50, 50],
-  iconAnchor: [0, 0],
-  popupAnchor: [25, 0]
-});
-const kunsten = L.icon({
-  iconUrl: '/img/marker-kunsten.png',
-  iconSize: [50, 50],
-  iconAnchor: [0, 0],
-  popupAnchor: [25, 0]
-});
-const graduaat = L.icon({
-  iconUrl: '/img/marker-graduaat.png',
-  iconSize: [50, 50],
-  iconAnchor: [0, 0],
-  popupAnchor: [25, 0]
-});
-const hoofdzetel = L.icon({
-  iconUrl: '/img/marker-hoofd.png',
-  iconSize: [50, 50],
-  iconAnchor: [0, 0],
-  popupAnchor: [25, 0]
-});
+
 
 $.getJSON("/ap.json", function(json) {
-  const campussen = json.campussen;
-  for (var i=0; i<campussen.length; i++) {
-    if (campussen[i].department === "Management & Communicatie") {
-      new L.marker(campussen[i].geolocation, {
-          icon: management
+  const culturespots = json.culturespots;
+  for (var i=0; i<culturespots.length; i++) {
+
+    if (culturespots[i].department === "Museum") {
+      new L.marker(culturespots[i].geolocation, {
+          icon: museum
         }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
+					<img src="${culturespots[i].marker}" alt="museum marker" class="popup-marker">
+					<h1>Campus ${culturespots[i].naam}</h1>
+					<h2>${culturespots[i].categorie}</h2>
 					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
+					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
+					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
 					</p>
 					`)
-        .addTo(campusMap);
+        .addTo(cultureMap);
     }
-    if (campussen[i].department === "Onderwijs & Training | Gezondheid & Welzijn") {
-      new L.marker(campussen[i].geolocation, {
-          icon: onderwijs
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="onderwijs marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
+
+    if (culturespots[i].department === "Archief | Erfgoedbibliotheek") {
+      new L.marker(culturespots[i].geolocation, {
+          icon: kerk
+				}).bindPopup(`
+					<img src="${culturespots[i].marker}" alt="kerk marker" class="popup-marker">
+					<h1>Campus ${culturespots[i].naam}</h1>
+					<h2>${culturespots[i].categorie}</h2>
 					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
+					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
+					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
 					</p>
 					`)
-        .addTo(campusMap);
-    }
-    if (campussen[i].department === "Wetenschappen & Techniek") {
-      new L.marker(campussen[i].geolocation, {
-          icon: wetenschap
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
+				.addTo(cultureMap);
+		}
+
+		if (culturespots[i].department === "Archief | Erfgoedbibliotheek") {
+			new L.marker(culturespots[i].geolocation, {
+					icon: bibliotheek
+				}).bindPopup(`
+					<img src="${culturespots[i].marker}" alt="bibliotheek marker" class="popup-marker">
+					<h1>Campus ${culturespots[i].naam}</h1>
+					<h2>${culturespots[i].categorie}</h2>
 					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
+					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
+					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
 					</p>
 					`)
-        .addTo(campusMap);
-    }
-    if (campussen[i].department === "Koninklijk Conservatorium") {
-      new L.marker(campussen[i].geolocation, {
-          icon: conservatorium
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
-					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
-					</p>
-					`)
-        .addTo(campusMap);
-    }
-    if (campussen[i].department === "Koninklijke Academie Voor Schone Kunsten") {
-      new L.marker(campussen[i].geolocation, {
-          icon: kunsten
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
-					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
-					</p>
-					`)
-        .addTo(campusMap);
-    }
-    if (campussen[i].department === "Graduaat") {
-      new L.marker(campussen[i].geolocation, {
-          icon: graduaat
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
-					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
-					</p>
-					`)
-        .addTo(campusMap);
-    }
-    if (campussen[i].department === "Hoofdzetel") {
-      new L.marker(campussen[i].geolocation, {
-          icon: hoofdzetel
-        }).bindPopup(`
-					<img src="${campussen[i].marker}" alt="management marker" class="popup-marker">
-					<h1>Campus ${campussen[i].name}</h1>
-					<h2>${campussen[i].department}</h2>
-					<p>
-					${campussen[i].street} ${campussen[i].number} <br>
-					${campussen[i].postal} ${campussen[i].city} <br>
-					${campussen[i].telephone} <br>
-					</p>
-					`)
-				.addTo(campusMap);
+				.addTo(cultureMap);
+		}
 				//function onClick(e) {
       	//window.open(this.options.win_url); }
-    }
   }
 });

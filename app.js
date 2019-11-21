@@ -23,7 +23,6 @@ app.listen(port);
 
 console.log("Webserver draait");
 
-
 // Inladen online json file
 var request = require('request');
   var data;
