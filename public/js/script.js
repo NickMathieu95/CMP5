@@ -23,6 +23,11 @@ const bibliotheek = L.icon({
   popupAnchor: [25, 0]
 });
 
+if(culturespots[i].categorie === "Museum"){
+	new L.marker(culturespots[i].geolocation, {
+			icon: museum
+}
+
 /*$.getJSON("/markers.json", function(json) {
   const culturespots = json.culturespots;
   for (var i=0; i<culturespots.length; i++) {
