@@ -9,8 +9,8 @@
     <script src="/js/script.js"></script>
     <script>
        <% for (var i = 0; i < gebouwen.length; i++) {%>
-          L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>]).bindPopup
-          ("<%=gebouwen[i].attributes.naam%>,<%=gebouwen[i].attributes.categorie%> ")
+          L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>])
+          .bindPopup("<%=gebouwen[i].attributes.naam%>,<%=gebouwen[i].attributes.categorie%> ")
           .addTo(cultureMap);
       <% }%>
 

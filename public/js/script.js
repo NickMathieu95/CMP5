@@ -23,6 +23,7 @@ const bibliotheek = L.icon({
   popupAnchor: [25, 0]
 });
 
+/*
 for (var i = 0; i < gebouwen.length; i++) {
   if (gebouwen[i].length.categorie === "Museum") {
     new L.marker(gebouwen[i].geometry, {
@@ -31,56 +32,55 @@ for (var i = 0; i < gebouwen.length; i++) {
   }
 }
 
-if(culturespots[i].categorie === "Museum"){
-	new L.marker(culturespots[i].geolocation, {
+if(gebouwen[i].categorie === "Museum"){
+	new L.marker(gebouwen[i].geolocation, {
 			icon: museum
 })
-}
+}*/
 
-/*$.getJSON("/markers.json", function(json) {
-  const culturespots = json.culturespots;
-  for (var i=0; i<culturespots.length; i++) {
+$.getJSON(data, function(json) {
+  const gebouwen = json.gebouwen;
+  for (var i=0; i<gebouwen.length; i++) {
 
-    if (culturespots[i].categorie === "Museum") {
-      new L.marker(culturespots[i].geolocation, {
+    if (gebouwen[i].categorie === "Museum") {
+      new L.marker(gebouwen[i].geolocation, {
           icon: museum
         }).bindPopup(`
-					<img src="${culturespots[i].marker}" alt="museum marker" class="popup-marker">
-					<h1>Campus ${culturespots[i].naam}</h1>
-					<h2>${culturespots[i].categorie}</h2>
+					<img src="${gebouwen[i].marker}" alt="museum marker" class="popup-marker">
+					<h1>${gebouwen[i].naam}</h1>
+					<h2>${gebouwen[i].categorie}</h2>
 					<p>
-					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
-					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
+					${gebouwen[i].straat} ${gebouwen[i].huisnr} <br>
+					${gebouwen[i].postcode} ${gebouwen[i].gemeente} <br>
 					</p>
-					`)
-        .addTo(cultureMap);
+					`).addTo(cultureMap);
     }
 
-    if (culturespots[i].categorie === "Archief | Erfgoedbibliotheek") {
-      new L.marker(culturespots[i].geolocation, {
+    if (gebouwen[i].categorie === "Archief | Erfgoedbibliotheek") {
+      new L.marker(gebouwen[i].geolocation, {
           icon: kerk
 				}).bindPopup(`
-					<img src="${culturespots[i].marker}" alt="kerk marker" class="popup-marker">
-					<h1>Campus ${culturespots[i].naam}</h1>
-					<h2>${culturespots[i].categorie}</h2>
+					<img src="${gebouwen[i].marker}" alt="kerk marker" class="popup-marker">
+					<h1>Campus ${gebouwen[i].naam}</h1>
+					<h2>${gebouwen[i].categorie}</h2>
 					<p>
-					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
-					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
+					${gebouwen[i].straat} ${gebouwen[i].huisnr} <br>
+					${gebouwen[i].postcode} ${gebouwen[i].gemeente} <br>
 					</p>
 					`)
 				.addTo(cultureMap);
 		}
 
-		if (culturespots[i].categorie === "Archief | Erfgoedbibliotheek") {
-			new L.marker(culturespots[i].geolocation, {
+		if (gebouwen[i].categorie === "Archief | Erfgoedbibliotheek") {
+			new L.marker(gebouwen[i].geolocation, {
 					icon: bibliotheek
 				}).bindPopup(`
-					<img src="${culturespots[i].marker}" alt="bibliotheek marker" class="popup-marker">
-					<h1>Campus ${culturespots[i].naam}</h1>
-					<h2>${culturespots[i].categorie}</h2>
+					<img src="${gebouwen[i].marker}" alt="bibliotheek marker" class="popup-marker">
+					<h1>Campus ${gebouwen[i].naam}</h1>
+					<h2>${gebouwen[i].categorie}</h2>
 					<p>
-					${culturespots[i].straat} ${culturespots[i].huisnr} <br>
-					${culturespots[i].postcode} ${culturespots[i].gemeente} <br>
+					${gebouwen[i].straat} ${gebouwen[i].huisnr} <br>
+					${gebouwen[i].postcode} ${gebouwen[i].gemeente} <br>
 					</p>
 					`)
 				.addTo(cultureMap);
@@ -88,4 +88,4 @@ if(culturespots[i].categorie === "Museum"){
 				//function onClick(e) {
       	//window.open(this.options.win_url); }
   }
-});*/
+});
