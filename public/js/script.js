@@ -1,7 +1,7 @@
 const cultureMap = L.map('mapid').setView([51.215860, 4.410800], 14);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'CMP5',
-  maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+		maxZoom: 18,
 }).addTo(cultureMap);
 
 const museum = L.icon({
