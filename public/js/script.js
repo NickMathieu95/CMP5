@@ -1,6 +1,6 @@
 const cultureMap = L.map('mapid').setView([51.215860, 4.410800], 14);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+  attribution: 'CMP5',
   maxZoom: 18,
 }).addTo(cultureMap);
 
@@ -23,9 +23,17 @@ const bibliotheek = L.icon({
   popupAnchor: [25, 0]
 });
 
+for (var i = 0; i < gebouwen.length; i++) {
+  if (gebouwen[i].length.categorie === "Museum") {
+    new L.marker(gebouwen[i].geometry, {
+      icon: museum
+    })
+  }
+
 if(culturespots[i].categorie === "Museum"){
 	new L.marker(culturespots[i].geolocation, {
 			icon: museum
+
 }
 
 /*$.getJSON("/markers.json", function(json) {
