@@ -29,6 +29,7 @@ for (var i = 0; i < gebouwen.length; i++) {
       icon: museum
     })
   }
+}
 
 if(culturespots[i].categorie === "Museum"){
 	new L.marker(culturespots[i].geolocation, {
@@ -36,7 +37,6 @@ if(culturespots[i].categorie === "Museum"){
 
 })
 }
-};
 
 /*$.getJSON("/markers.json", function(json) {
   const culturespots = json.culturespots;
