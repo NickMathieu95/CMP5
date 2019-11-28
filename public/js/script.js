@@ -5,12 +5,10 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
 }).addTo(cultureMap);
 function onLocationFound(e) {
     var radius = e.accuracy;
-
-    L.marker(e.latlng).addTo(cultureMap)
-        .bindPopup("Je bent hier " + radius + " meter in omtrek").openPopup();
-
+    L.marker(e.latlng).addTo(cultureMap).bindPopup("Je bent hier " + radius + " meter in omtrek").openPopup();
     L.circle(e.latlng, radius).addTo(cultureMap);
 }
+cultureMap.on('locationfound', onLocationFound);
 
 const basis = L.icon({
   iconUrl: '../img/marker-basis.png',
