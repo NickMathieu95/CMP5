@@ -23,10 +23,20 @@
             icoon = bibliotheek;
           }
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
-          .bindPopup("<%=gebouwen[i].attributes.naam%>,<%=gebouwen[i].attributes.categorie%> ")
+          .bindPopup("<h1><%=gebouwen[i].attributes.naam%></h1>,<%=gebouwen[i].attributes.categorie%>")
           .addTo(cultureMap);
       <% }%>
-
+/*
+      .bindPopup(`
+        <img src="${gebouwen[i].marker}" alt="kerk marker" class="popup-marker">
+        <h1>Campus ${gebouwen[i].naam}</h1>
+        <h2>${gebouwen[i].categorie}</h2>
+        <p>
+        ${gebouwen[i].straat} ${gebouwen[i].huisnr} <br>
+        ${gebouwen[i].postcode} ${gebouwen[i].gemeente} <br>
+        </p>
+        `)
+*/
     </script>
 </main>
 <% include footer %>
