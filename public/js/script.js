@@ -4,20 +4,26 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
 		maxZoom: 18,
 }).addTo(cultureMap);
 
+const basis = L.icon({
+  iconUrl: '../img/marker-basis.png',
+  iconSize: [50, 50],
+  iconAnchor: [0, 0],
+  popupAnchor: [25, 0]
+});
 const museum = L.icon({
-  iconUrl: '/img/marker-museum.png',
+  iconUrl: '../img/marker-museum.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
 const kerk = L.icon({
-  iconUrl: '/img/marker-kerk.png',
+  iconUrl: '../img/marker-kerk.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
 const bibliotheek = L.icon({
-  iconUrl: '/img/marker-bibliotheek.png',
+  iconUrl: '../img/marker-bibliotheek.png',
   iconSize: [50, 50],
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
