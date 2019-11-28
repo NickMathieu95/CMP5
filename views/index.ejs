@@ -23,7 +23,7 @@
             icoon = bibliotheek;
           }
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
-          .bindPopup("<h1><%=gebouwen[i].attributes.naam%></h1>,<%=gebouwen[i].attributes.categorie%>")
+          .bindPopup("<h1><%=gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2>")
           .addTo(cultureMap);
       <% }%>
 /*
