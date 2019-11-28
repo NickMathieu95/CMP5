@@ -10,8 +10,17 @@
     <script>
        <% for (var i = 0; i < gebouwen.length; i++) {%>
           var icoon = basis;
-          if ("<%=gebouwen[i].attributes.categorie%>" == "Museum" || "<%=gebouwen[i].attributes.categorie%>" == "Levensbeschouwelijk erfgoed") {
+          if ("<%=gebouwen[i].attributes.categorie%>" == "Museum" ||
+              "<%=gebouwen[i].attributes.categorie%>" == "Museumdepot") {
             icoon = museum;
+          }
+          if ("<%=gebouwen[i].attributes.categorie%>" == "Levensbeschouwelijk erfgoed") {
+            icoon = kerk;
+          }
+          if ("<%=gebouwen[i].attributes.categorie%>" == "Archief" ||
+              "<%=gebouwen[i].attributes.categorie%>" == "Erfgoedbibliotheek" ||
+              "<%=gebouwen[i].attributes.categorie%>" == "Documentatiecentrum") {
+            icoon = bibliotheek;
           }
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
           .bindPopup("<%=gebouwen[i].attributes.naam%>,<%=gebouwen[i].attributes.categorie%> ")
