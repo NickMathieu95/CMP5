@@ -36,7 +36,7 @@ if(gebouwen[i].categorie === "Museum"){
 	new L.marker(gebouwen[i].geolocation, {
 			icon: museum
 })
-}*/
+}
 
 $.getJSON(data, function(json) {
   const gebouwen = json.gebouwen;
@@ -88,4 +88,4 @@ $.getJSON(data, function(json) {
 				//function onClick(e) {
       	//window.open(this.options.win_url); }
   }
-});
+});*/
