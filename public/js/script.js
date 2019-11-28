@@ -34,7 +34,6 @@ const bibliotheek = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-
 /*
 for (var i = 0; i < gebouwen.length; i++) {
   if (gebouwen[i].length.categorie === "Museum") {
