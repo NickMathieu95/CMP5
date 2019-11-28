@@ -6,7 +6,7 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
             integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
             crossorigin=""></script>
-            
+
     <script src="/js/script.js"></script>
     <script>
        <% for (var i = 0; i < gebouwen.length; i++) {%>
@@ -24,7 +24,7 @@
             icoon = bibliotheek;
           }
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
-          .bindPopup("<h1><%-gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p> ")
+          .bindPopup("<h1><%-gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>")
           .addTo(cultureMap);
       <% }%>
     </script>
