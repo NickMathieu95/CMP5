@@ -51,3 +51,5 @@ var request = require('request');
       culturespots: data
     });
   });
+
+var glob = require("glob")
