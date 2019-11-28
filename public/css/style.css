@@ -40,6 +40,8 @@ header{
   margin: 0 auto;
   padding: 1em;
   background-color: #FDFDFD;
+  border: 2px solid #29FDA3;
+  border-radius: 20px;
 }
 h1{
   font-family: 'staalvis';
