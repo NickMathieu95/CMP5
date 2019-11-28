@@ -1,8 +1,16 @@
 const cultureMap = L.map('mapid').locate({setView: true});;
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-		maxZoom: 12,
+		maxZoom: 14,
 }).addTo(cultureMap);
+function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(cultureMap)
+        .bindPopup("Je bent hier " + radius + " meter in omtrek").openPopup();
+
+    L.circle(e.latlng, radius).addTo(cultureMap);
+}
 
 const basis = L.icon({
   iconUrl: '../img/marker-basis.png',
