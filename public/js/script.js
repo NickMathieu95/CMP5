@@ -7,6 +7,15 @@ function onLocationFound(e) {
     var radius = e.accuracy;
     L.marker(e.latlng).addTo(cultureMap).bindPopup("<p class='here'>START YOUR JOURNEY HERE</p><p class='here'>currently accurate to " + radius + " meters</p>").openPopup();
     L.circle(e.latlng, radius).addTo(cultureMap);
+    
+        
+    L.Routing.control({
+    waypoints: [
+    L.latLng(e.latlng),//live locatie
+    L.latLng(56.6792, 11.949),
+    L.latLng(57.6792, 11.949)
+  ]
+}).addTo(cultureMap);
 }
 cultureMap.on('locationfound', onLocationFound);
 function onLocationError(e) {
