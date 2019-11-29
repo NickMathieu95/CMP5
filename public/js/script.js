@@ -2,6 +2,7 @@ const cultureMap = L.map('mapid').locate({setView: true});;
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 		maxZoom: 14,
+        watch: true,
 }).addTo(cultureMap);
 function onLocationFound(e) {
     var radius = e.accuracy;
