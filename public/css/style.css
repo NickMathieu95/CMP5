@@ -52,6 +52,10 @@ header{
   color: #29FDA3 !important;
 }
 
+.leaflet-routing-container{
+  width: 200px;
+}
+
 h1{
   font-family: 'staalvis';
   color: black;

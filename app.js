@@ -16,10 +16,12 @@ app.get('/', function(req, res) {
     let t = Math.floor(Math.random()*data.features.length);
     gebouwen.push(data.features[t]);
   }
+
   res.render('index', {
     gebouwen: gebouwen
   });
 });
+
 app.get('/about', function(req, res) {
   res.render('about');
 });
@@ -41,8 +43,8 @@ var request = require('request');
       for(var i=0; i < data.features.length; i++) {
           /*console.log("naam: " + data.features[i].attributes.naam);
           console.log("coord: " + data.features[i].geometry.x + ", " + data.features[i].geometry.y);
-          console.log("");*/
-          console.log(data.features[i].geometry);
+          console.log("");
+          console.log(data.features[i].geometry);*/
       }
     }
   );
