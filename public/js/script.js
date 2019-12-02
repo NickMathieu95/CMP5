@@ -8,8 +8,7 @@ function onLocationFound(e) {
     var radius = e.accuracy;
     L.marker(e.latlng).addTo(cultureMap).bindPopup("<p class='here'>START YOUR JOURNEY HERE</p><p class='here'>currently accurate to " + radius + " meters</p>").openPopup();
     L.circle(e.latlng, radius).addTo(cultureMap);
-    
-        
+
     L.Routing.control({
     waypoints: [
     L.latLng(e.latlng),//live locatie
@@ -48,3 +47,8 @@ const bibliotheek = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
+
+$('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
