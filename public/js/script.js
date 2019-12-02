@@ -47,8 +47,3 @@ const bibliotheek = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-
-$('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
