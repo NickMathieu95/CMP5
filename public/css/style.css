@@ -1,6 +1,4 @@
 /*navigatie*/
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-
 .container {
   position: absolute;
   width: 100%;
@@ -9,7 +7,6 @@
   top: 40%;
   left: 0;
   margin: 0 auto;
-  font-family: 'Varela Round', sans-serif;
   z-index: 5;
 }
 .container p {
@@ -119,7 +116,6 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 50px;
-  font-family: 'Varela Round', serif;
   font-weight: 400;
   text-align: center;
 }
