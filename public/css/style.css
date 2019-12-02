@@ -1,12 +1,13 @@
 /*navigatie*/
 .container {
-  position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   top: 40%;
   left: 0;
   margin: 0 auto;
+  position: sticky;
+  font-family: 'bulldog', sans-serif;
   z-index: 5;
 }
 .container p {
