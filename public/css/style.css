@@ -112,7 +112,11 @@ p.here{
   height: 150px;
   position: absolute;
   bottom: 0;
-  background-color: blue;
+  background-color: #29FDA3;
+  background-image: url("../img/toerist.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-blend-mode: darken;
 }
 
 /*mediaqueries*/
