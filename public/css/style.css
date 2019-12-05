@@ -119,6 +119,48 @@ p.here{
   opacity: .7;
 }
 
+.aboutcontact h4 {
+  font-family: 'bulldog', sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 22px;
+  opacity: .4;
+}
+
+.aboutcontact h5 {
+  font-family: 'bulldog', sans-serif;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 30px;
+  opacity: .8;
+}
+
+.aboutcontact textarea, input {
+  font-family: 'bulldog';
+  width: 80%;
+  height: 30px;
+  font-size: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-left: 5px;
+  background-color: inherit;
+  border: 1px solid lightgrey;
+}
+
+.aboutcontact textarea:nth-child(2) {
+margin-top: 10px;
+height: 90px;
+}
+.aboutcontact input {
+font-family: 'bulldog';
+border: 0px solid lightgrey;
+background-color: #29FDA3;
+width: inherit;
+font-size: 23px;
+}
+
 /*mediaqueries*/
 @media only screen and (min-width: 768px) {
   header{
@@ -140,7 +182,14 @@ p.here{
   .aboutcontact div {
     height:300px;
   }
-
+  .aboutcontact textarea {
+    width: 50%;
+    height: 40px;
+    padding-left: 10px;
+  }
+  .aboutcontact textarea:nth-child(2) {
+    height: 110px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .aboutcontact div {
