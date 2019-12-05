@@ -11,6 +11,7 @@
     <script src="/js/nav.js"></script>
 
     <script>
+        var arMarkers = new Array();
        <% for (var i = 0; i < gebouwen.length; i++) {%>
           var icoon = basis;
           if ("<%=gebouwen[i].attributes.categorie%>" == "Museum" ||
@@ -28,7 +29,10 @@
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
           .bindPopup("<h1><%-gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>")
           .addTo(cultureMap);
+          arMarkers.push([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>]);
+        
       <% }%>
+        console.log(arMarkers);
     </script>
 </main>
 <% include footer %>
