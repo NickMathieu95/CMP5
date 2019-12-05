@@ -1,3 +1,43 @@
+.leaflet-marker-icon:nth-child(7){
+    visibility: hidden;
+    display: none;
+}
+
+.leaflet-marker-icon:nth-child(8){
+    visibility: hidden;
+    display: none;
+}
+.leaflet-marker-icon:nth-child(9){
+    visibility: hidden;
+    display: none;
+}
+.leaflet-marker-icon:nth-child(10){
+    visibility: hidden;
+    display: none;
+}
+.leaflet-marker-icon:nth-child(11){
+    visibility: hidden;
+    display: none;
+}
+.leaflet-marker-icon:nth-child(12){
+    visibility: hidden;
+    display: none;
+}
+.leaflet-marker-icon:nth-child(13){
+    visibility: hidden;
+    display: none;
+}
+
+.leaflet-marker-icon:nth-child(14){
+    visibility: hidden;
+    display: none;
+}
+
+.leaflet-marker-icon{
+    left: -20px !important;
+    top: -30px!important;
+}
+
 @font-face{
   font-family: staalvis;
   src: url("/fonts/steelfish.otf");
