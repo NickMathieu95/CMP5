@@ -4,29 +4,6 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
 		maxZoom: 14,
         watch: true,
 }).addTo(cultureMap);
-function onLocationFound(e) {
-    var radius = e.accuracy;
-    L.marker(e.latlng).addTo(cultureMap).bindPopup("<p class='here'>START YOUR JOURNEY HERE</p><p class='here'>currently accurate to " + radius + " meters</p>").openPopup();
-    L.circle(e.latlng, radius).addTo(cultureMap);
-
-    L.Routing.control({
-    waypoints: [
-    L.latLng(e.latlng),//live locatie
-    L.latLng(arMarkers[0][0], arMarkers[0][1]),
-    L.latLng(arMarkers[1][0], arMarkers[1][1]),
-    L.latLng(arMarkers[2][0], arMarkers[2][1]),
-    L.latLng(arMarkers[3][0], arMarkers[3][1]),
-    L.latLng(arMarkers[4][0], arMarkers[4][1]),
-    L.latLng(arMarkers[5][0], arMarkers[5][1]),
-
-  ]
-}).addTo(cultureMap);
-}
-cultureMap.on('locationfound', onLocationFound);
-function onLocationError(e) {
-    alert(e.message);
-}
-cultureMap.on('locationerror', onLocationError);
 
 const basis = L.icon({
   iconUrl: '../img/marker-basis.png',
@@ -64,3 +41,28 @@ const eigenlocatie = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
+
+function onLocationFound(e) {
+    var radius = e.accuracy;
+    L.marker(e.latlng,{icon:eigenlocatie}).addTo(cultureMap).bindPopup("<p class='here'>START YOUR JOURNEY HERE</p><p class='here'>currently accurate to " + radius + " meters</p>").openPopup();
+    L.circle(e.latlng, radius).addTo(cultureMap);
+
+    L.Routing.control({
+    waypoints: [
+    L.latLng(e.latlng),//live locatie
+    L.latLng(arMarkers[0][0], arMarkers[0][1]),
+    L.latLng(arMarkers[1][0], arMarkers[1][1]),
+    L.latLng(arMarkers[2][0], arMarkers[2][1]),
+    L.latLng(arMarkers[3][0], arMarkers[3][1]),
+    L.latLng(arMarkers[4][0], arMarkers[4][1]),
+    L.latLng(arMarkers[5][0], arMarkers[5][1]),
+  ]
+}).addTo(cultureMap);
+}
+
+cultureMap.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+cultureMap.on('locationerror', onLocationError);

@@ -27,15 +27,6 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
   res.render('contact');
 });
-app.get('/list', function(req, res) {
-  res.render('list',{
-    culturespots: data
-  });
-});
-
-app.listen(port);
-
-console.log("Webserver draait");
 
 // Inladen online json file
 var request = require('request');
@@ -54,8 +45,18 @@ var request = require('request');
   );
   app.get('/', function(req, res){
     res.render('culture', {
-      culturespots: data
+      gebouwen: data
     });
   });
 
 var glob = require("glob")
+
+app.get('/list', function(req, res) {
+  res.render('list',{
+    gebouwen: data
+  });
+});
+
+app.listen(port);
+
+console.log("Webserver draait");
