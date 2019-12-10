@@ -52,4 +52,9 @@ const bibliotheek = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
-
+const erfgoed = L.icon({
+  iconUrl: '../img/marker-erfgoed.png',
+  iconSize: [50, 50],
+  iconAnchor: [0, 0],
+  popupAnchor: [25, 0]
+});

@@ -26,11 +26,14 @@
               "<%=gebouwen[i].attributes.categorie%>" == "Documentatiecentrum") {
             icoon = bibliotheek;
           }
+          if ("<%=gebouwen[i].attributes.categorie%>" == "Erfgoedvereniging") {
+            icoon = erfgoed;
+          }
           marker = new L.marker([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>], {icon: icoon})
           .bindPopup("<h1><%-gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>")
           .addTo(cultureMap);
           arMarkers.push([<%=gebouwen[i].geometry.y%>, <%=gebouwen[i].geometry.x%>]);
-        
+
       <% }%>
         console.log(arMarkers);
     </script>
