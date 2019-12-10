@@ -28,8 +28,9 @@ app.get('/contact', function(req, res) {
   res.render('contact');
 });
 app.get('/list', function(req, res) {
-  res.render('list');
-  culturespots: data;
+  res.render('list',{
+    culturespots: data;
+  });
 });
 
 app.listen(port);
