@@ -6,7 +6,7 @@
   <h1>All Locations</h1>
 <script>
       <% for (var i=0; i<gebouwen.length; i++) {%>
-        document.write("<h1><%-gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>");
+        document.write("<h1><%=gebouwen[i].attributes.naam%></h1><h2><%=gebouwen[i].attributes.categorie%></h2> <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>");
       <% }%>
 </script>
 </main>
