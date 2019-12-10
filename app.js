@@ -53,7 +53,7 @@ var glob = require("glob")
 
 app.get('/list', function(req, res) {
   res.render('list',{
-    gebouwen: data
+    gebouwen: data.features
   });
 });
 
