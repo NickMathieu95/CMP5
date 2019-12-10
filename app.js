@@ -29,7 +29,7 @@ app.get('/contact', function(req, res) {
 });
 app.get('/list', function(req, res) {
   res.render('list',{
-    culturespots: data;
+    culturespots: data
   });
 });
 
