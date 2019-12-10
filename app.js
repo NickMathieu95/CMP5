@@ -16,7 +16,6 @@ app.get('/', function(req, res) {
     let t = Math.floor(Math.random()*data.features.length);
     gebouwen.push(data.features[t]);
   }
-
   res.render('index', {
     gebouwen: gebouwen
   });
@@ -30,6 +29,8 @@ app.get('/contact', function(req, res) {
 });
 app.get('/list', function(req, res) {
   res.render('list');
+  culturespots: data
+
 });
 
 app.listen(port);
