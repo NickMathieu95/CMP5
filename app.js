@@ -28,6 +28,9 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
   res.render('contact');
 });
+app.get('/list', function(req, res) {
+  res.render('list');
+});
 
 app.listen(port);
 
