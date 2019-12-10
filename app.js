@@ -57,6 +57,6 @@ app.get('/list', function(req, res) {
   });
 });
 
-app.listen(port);
+app.listen(process.env.PORT || 5000);
 
 console.log("Webserver draait");
