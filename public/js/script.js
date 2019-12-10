@@ -56,7 +56,10 @@ function onLocationFound(e) {
     L.latLng(arMarkers[3][0], arMarkers[3][1]),
     L.latLng(arMarkers[4][0], arMarkers[4][1]),
     L.latLng(arMarkers[5][0], arMarkers[5][1]),
-  ]
+  ],
+  lineOptions: {
+     styles: [{color: '#29FDA3', opacity: 1, weight: 5}]
+  }
 }).addTo(cultureMap);
 }
 
