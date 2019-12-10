@@ -58,3 +58,9 @@ const erfgoed = L.icon({
   iconAnchor: [0, 0],
   popupAnchor: [25, 0]
 });
+const eigenlocatie = L.icon({
+  iconUrl: '../img/marker-location.png',
+  iconSize: [50, 50],
+  iconAnchor: [0, 0],
+  popupAnchor: [25, 0]
+});
