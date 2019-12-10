@@ -46,7 +46,7 @@
 }
 body{
   background-color: #F2F2F2;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
 }
 html, body{
@@ -198,6 +198,19 @@ background-color: #29FDA3;
 width: inherit;
 font-size: 23px;
 }
+/* list styles */
+.liststyle {
+  text-align: center;
+}
+.listtitle {
+  font-family: 'bulldog', sans-serif;
+  margin-top: 30px;
+  font-size: 45px;
+}
+.liststyle h2{
+  color: #B329FD;
+}
+/* end list styles*/
 
 /*mediaqueries*/
 @media only screen and (min-width: 768px) {

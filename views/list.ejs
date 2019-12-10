@@ -1,14 +1,19 @@
 <% include header %>
 
-<main class="aboutcontact">
+<main class="liststyle">
   <script src="/js/nav.js"></script>
-  <h1>All Locations</h1>
-
-
+  <h1 class="listtitle">All Locations</h1>
+<br>
     <% for (var i=0; i<gebouwen.length; i++) {%>
+      <br>
         <h1><%-gebouwen[i].attributes.naam%></h1>
+        <br>
         <h2><%=gebouwen[i].attributes.categorie%></h2>
-        <p><%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br> <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%></p>
+        <br>
+        <p>
+          <%=gebouwen[i].attributes.straat%> <%=gebouwen[i].attributes.huisnr%> <br>
+          <%=gebouwen[i].attributes.postcode%> <%=gebouwen[i].attributes.gemeente%>
+        </p>
     <% }%>
 
 </main>
