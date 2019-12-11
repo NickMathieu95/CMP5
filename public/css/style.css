@@ -46,9 +46,14 @@
 }
 body{
   background-color: #F2F2F2;
-  overflow: scroll;
+  overflow: hidden;
   position: relative;
 }
+
+.scroll {
+  overflow:scroll;
+}
+
 html, body{
   height: 100%;
   width: 100%;
