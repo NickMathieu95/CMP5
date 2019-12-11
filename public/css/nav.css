@@ -55,6 +55,7 @@
 .button_container.active .top {
   transform: translateY(11px) translateX(0) rotate(45deg);
   background: #FFF;
+  opacity: 1;
 }
 .button_container.active .middle {
   opacity: 0;
@@ -63,9 +64,11 @@
 .button_container.active .bottom {
   transform: translateY(-11px) translateX(0) rotate(-45deg);
   background: #FFF;
+  opacity: 1;
 }
 .button_container span {
-  background: #B329FD;
+  background: black;
+  opacity: .4;
   border: none;
   height: 5px;
   width: 100%;
