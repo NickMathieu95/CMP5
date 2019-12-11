@@ -41,10 +41,10 @@
 
 .button_container {
   position: fixed;
-  top: 5%;
-  right: 2%;
-  height: 27px;
-  width: 35px;
+  top: 4%;
+  right: 6%;
+  height: 20px;
+  width: 32px;
   cursor: pointer;
   z-index: 5;
   transition: opacity .25s ease;
@@ -157,4 +157,14 @@
     opacity: 1;
     right: 0;
   }
+}
+
+@media only screen and (min-width: 768px) {
+  .button_container {
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  height: 27px;
+  width: 35px;
+}
 }
